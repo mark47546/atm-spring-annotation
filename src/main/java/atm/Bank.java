@@ -5,6 +5,7 @@ import java.util.Map;
 /**
  * A bank contains customers with bank accounts.
  */
+@Component
 public class Bank {
 
    private String name;
@@ -14,7 +15,8 @@ public class Bank {
    /**
     * Constructs a bank with no customers.
     */
-   public Bank(String name, DataSource dataSource) {
+   @Autowired
+   public Bank(@Value("${bankname}") String name, DataSource dataSource) {
       this.name = name;
       this.dataSource = dataSource;
       this.customers = dataSource.readCustomers();

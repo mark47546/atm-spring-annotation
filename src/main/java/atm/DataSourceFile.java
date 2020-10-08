@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class DataSourceFile implements DataSource {
+@Component
+public DataSourceFile(@Value("${filename}") String filename) {
 
     private String filename;
 
